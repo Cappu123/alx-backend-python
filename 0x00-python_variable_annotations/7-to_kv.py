@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-
-'''module of Task7
+'''Task 7's module.
 '''
 from typing import Union, Tuple
 
+
 def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     '''Converts a key and its value to a tuple of the key and
-    the square of its valu
+    the square of its value.
     '''
-
-    sqr = float(v ** 2)
-    return [k, sqr]
+    return (k, float(v**2))
