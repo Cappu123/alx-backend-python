@@ -2,6 +2,7 @@
 
 from typing import List
 
+"""Task 5's module"""
 
 def sum_list(input_list: List[float]) -> float:
     """
