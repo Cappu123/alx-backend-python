@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-""" The basics of async """
+'''
+    The basics of async.
+'''
 
 import asyncio
-from typing import List
-
-wait_random = __import__('0-basic_async_syntax').wait_random
+import random
 
 
-async def wait_n(n: int, max_delay: int) -> List[float]:
+async def wait_random(max_delay: int = 10) -> float:
     """
-    spawn wait_random n times with the specified max_delay.
+    waits for a random delay between 0 and max_delay (included and float value)
+    seconds and eventually returns it.
     """
-    tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
-    return [await task for task in asyncio.as_completed(tasks)]
+    delay = random.uniform(0, max_delay)
+    await asyncio.sleep(delay)
+    return delay
